@@ -1,1 +1,23 @@
-#This file can contain anything 
+##This file can contain anything
+
+#Stretch Goals
+
+A *merge conflict* is a problem that occurs when Git finds disparate code or files between branches that are in the process of being merged, and cannot resolve the issue on its own.
+These lines or files must be manually reviewed by a programmer to decide how to best tresolve the issue.
+Sometimes competing code lines can be resolved with the Github *conflict editor* by going to *Pull Requests* -> *Resolve Conflicts* and editing, commiting and merging on the Github site.
+For issues that Github cannot resolve there is also the Terminal method, where one would open the affected repository: *cd repository*, using the command *git status* to find the affected file(s), and then opening and editing using *code .* 
+if lines are affected search for the *conflict markers*: *<<<<<<<<* and alter the lines and delete the markers.
+For files check and see what files have been removed/added and decide how best to alter the other to match.
+Use *git add .* to stage the files, and *git commit -m'message'* to commit with a message about the changes.
+
+*Git merge* is when two or more divergent repositories are combined to reflect changes made by different contributors to a master branch.
+
+*Git pull* is a command that operates two functions, first *git fetch* which downloads remote content from a specified repository so it can be examined, but instead of stopping there, it will also execute *git merge* which will combine the branches as stated above,
+
+*Git rebase* is a command that combines two branches divergent repositories, but instead of tying them back after they had forked as merge does, it stacks the difference on the head of your branch, and moves all commits to the point where the rebase took place. If collaborating on a project, branch history will become very confusing and difficult to trace backwards.
+
+*Git clean* removes untracked files that have been created in your repository, but not added to the tracking index via *git add .*
+
+*Git reset* removes changes made bin three different primary severities, *--soft*, *--mixed* and *--hard*. These differ based on the type of information cleared. *--soft will reset *ref pointers*, but *staging index* and *working index* are not altered. *--mixed* will reset *ref pointers* and *staging index*, the latter to a specified state and undone changes are moved to the *working directory*.  *--hard* removes all un-, & staged data to a specified commit point with no way of recovering it.
+
+*Git revert* makes a commit that changes the state of your branch to a previous one, but keeps the history of said changes intact.
